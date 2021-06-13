@@ -1,0 +1,70 @@
+/* CODÉ PAR HERMANN BOKODAHO hermann@orificegroup.net */
+/* Contenu du cube */
+.concube {
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+    margin: 100px auto 0px;
+    padding: 100px 500px;
+}
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
+}
+/*  */
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 1px transparent lightslategrey;
+}
+/* Face du devant */
+.front {
+	transform: translateZ(100px);
+    background-color: red;
+	background-image: url(../img/babel.png);
+}
+/* Face du derriere */
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+    background-color: black;
+	background: url(../img/lg_bgs_justo.jpg);
+}
+/* Face laterale droite */
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+    background-color: blue;
+	background: url(../img/lg\ bat1.jpg);
+}
+/* Face laterale gauche */
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+    background-color: green;
+	background: url(../img/lg_bat_justo.jpg) ;
+}
+/* Face du haut (apparait en 3D ou lorsqu'on change le sens de rotation du cube)*/
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+    background-color: purple;
+	background: url(../img/babel.png);
+}
+/* Face du bas (apparait en 3D ou lorsqu'on change le sens de rotation du cube)*/
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+    background-color: skyblue;
+	background: url(tof-ecommerce.jpg);
+}
+
+/* La propriete @keyframe pour faire tourner le cube */
+@keyframes spin {
+	from { transform: rotateY(0)}
+	to { transform: rotateY(360deg)}
+}
